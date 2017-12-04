@@ -38,6 +38,7 @@ public class FXMLUserViewController implements Initializable {
        
     window.setScene(adminViewScene);
     window.show();
+    //will add lastlogin code here
 }
     /**
      * Initializes the controller class.
