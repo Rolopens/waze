@@ -44,6 +44,7 @@ public class FXMLUserViewController implements Initializable {
     //will add lastlogin code here
     java.sql.Date sqlDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
     currentUser.setLastLogin(sqlDate);
+    System.out.println(currentUser.getLastLogin().toString());
     //still need to fix update function in service file
 }
     /**
