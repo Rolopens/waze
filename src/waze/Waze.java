@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * Zach
+ * Sammie
  * @author Rolo
  */
 public class Waze extends Application {
