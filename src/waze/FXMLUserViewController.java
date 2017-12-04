@@ -7,6 +7,7 @@ package waze;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +19,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import java.util.Date;
+
 
 /**
  * FXML Controller class
@@ -39,6 +42,9 @@ public class FXMLUserViewController implements Initializable {
     window.setScene(adminViewScene);
     window.show();
     //will add lastlogin code here
+    java.sql.Date sqlDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+    currentUser.setLastLogin(sqlDate);
+    //still need to fix update function in service file
 }
     /**
      * Initializes the controller class.
