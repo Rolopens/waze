@@ -10,9 +10,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="253.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="waze.FXMLDocumentController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="waze.FXMLDocumentController">
     <children>
-      <VBox fx:id="loginVBox" alignment="CENTER" layoutX="113.0" layoutY="28.0" prefHeight="200.0" prefWidth="202.0" spacing="20.0">
+      <ImageView fitHeight="488.0" fitWidth="640.0" layoutY="-5.0">
+         <image>
+            <Image url="@wazecolorback.png" />
+         </image>
+      </ImageView>
+      <VBox fx:id="loginVBox" alignment="CENTER" layoutX="218.0" layoutY="182.0" prefHeight="200.0" prefWidth="202.0" spacing="20.0">
          <children>
             <Label fx:id="username" text="Username" />
             <TextField fx:id="usernameTextField" />
@@ -26,9 +31,9 @@
             </HBox>
          </children>
       </VBox>
-      <ImageView fitHeight="105.0" fitWidth="113.0" layoutY="175.0">
+      <ImageView fitHeight="99.0" fitWidth="368.0" layoutX="136.0" layoutY="34.0">
          <image>
-            <Image url="@waze.png" />
+            <Image url="@../../../../NetBeansProjects/Waze/src/waze/waze.png" />
          </image>
       </ImageView>
     </children>
