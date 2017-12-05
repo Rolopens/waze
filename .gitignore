@@ -6,3 +6,4 @@ build/classes/waze/FXMLUserViewController.class
 dist/Waze.html
 *.properties
 *.xml
+*.xml
