@@ -31,9 +31,9 @@
             </HBox>
          </children>
       </VBox>
-      <ImageView fitHeight="99.0" fitWidth="368.0" layoutX="136.0" layoutY="34.0">
+      <ImageView fitHeight="129.0" fitWidth="445.0" layoutX="97.0" layoutY="29.0">
          <image>
-            <Image url="@../../../../NetBeansProjects/Waze/src/waze/waze.png" />
+            <Image url="@waze.png" />
          </image>
       </ImageView>
     </children>
