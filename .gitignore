@@ -4,3 +4,4 @@ build/built-jar.properties
 build/built-jar.properties
 build/classes/waze/FXMLUserViewController.class
 dist/Waze.html
+*.properties
