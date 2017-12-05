@@ -51,7 +51,7 @@ public class SavedLocationsService {
 	
 	//return list
 	return SavedLocations;
-}
+    }
 
     public static void main(String[] args) {
 	SavedLocationsService service = new SavedLocationsService(new UsersDB());
@@ -60,7 +60,7 @@ public class SavedLocationsService {
 	for (SavedLocation SavedLocation: SavedLocations) {
 		System.out.println(SavedLocation);
 	}
-}
+    }
 
     private SavedLocation toSavedLocation(ResultSet rs) throws SQLException {
         SavedLocation SavedLocation = new SavedLocation();
@@ -108,7 +108,7 @@ public class SavedLocationsService {
         Connection cnt = connection.getConnection();
 				
 	//create query
-	String query = "INSERT INTO " + SavedLocation.TABLE +" VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+	String query = "INSERT INTO " + SavedLocation.TABLE +" VALUES(?, ?, ?)";
 	
 	try {
             //create prepared statement

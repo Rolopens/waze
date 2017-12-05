@@ -5,14 +5,14 @@ public class SavedLocation {
     private int LocationID;
     private String Type;
     
-    public static final String TABLE = "SavedLocations";
+    public static final String TABLE = "saved_locations";
     public static final String COL_USERNAME = "Username";
     public static final String COL_LOCATIONID = "LocationID";
-    public static final String COL_TYPE = "Type";
+    public static final String COL_TYPE = "type";
     
     @Override
 	public String toString() {
-		return "SavedLocations [Username=" + Username + ", LocationID=" + LocationID + ", type=" + Type + "]";
+		return "saved_locations [Username=" + Username + ", LocationID=" + LocationID + ", type=" + Type + "]";
 	}
         
         public String getUsername(){
