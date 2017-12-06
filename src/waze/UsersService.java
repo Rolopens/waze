@@ -55,6 +55,51 @@ public class UsersService {
 		//return list
 		return Users;
 	}
+
+	/* public List<User> getFriends(User User) {
+		// create an empty list of Users
+		List<User> Friends = new ArrayList<User>();
+		
+		//get connection from db
+		Connection cnt = connection.getConnection();
+		
+		//create string query
+		String query = "SELECT " + User.COL_LASTNAME
+                        + ", " + User.COL_FIRSTNAME
+                        + ", " + User.COL_AVATAR
+                        + ", " + User.COL_LASTLOGIN
+                        + " FROM " + User.TABLE + " U " + " JOIN" + " friends F"
+                        + " ON U.Username = F.Username"
+                        + " WHERE U." + User.COL_USERNAME + " = ?";
+		try {
+			//create prepared statement
+			PreparedStatement ps = cnt.prepareStatement(query);
+                        System.out.println(query);
+                        
+			ps.setString(1, User.getUsername());
+			
+			//get result and store in result set
+			ResultSet rs = ps.executeQuery();
+			
+			//transform set to list
+			while(rs.next()) {
+				Friends.add(toUser(rs));
+			}
+			
+			//close all resources
+			ps.close();
+			rs.close();
+			cnt.close();
+			
+			System.out.println("[UserS] SELECT SUCCESS!");
+		} catch (SQLException e) {
+			System.out.println("[UserS] SELECT FAILED!");
+			e.printStackTrace();
+		}
+		
+		//return list
+		return Friends;
+	} */
 	
 	public static void main(String[] args) {
 		UsersService service = new UsersService(new UsersDB());
@@ -119,7 +164,7 @@ public class UsersService {
 				Connection cnt = connection.getConnection();
 				
 				//create query
-				String query = "INSERT INTO " + User.TABLE +" VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+				String query = "INSERT INTO " + User.TABLE + " VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 				
 				try {
 					//create prepared statement
@@ -130,7 +175,7 @@ public class UsersService {
 					ps.setString(2, User.getPassword());
 					ps.setString(3, User.getLastName());
 					ps.setString(4, User.getFirstName());
-					ps.setString(5, null);
+					ps.setString(5, "default.png");
 					ps.setString(6, User.getPhoneNo());
 					ps.setString(7, User.getEmail());
 					ps.setDate(8, null);
@@ -150,7 +195,7 @@ public class UsersService {
 				}
 		
 	}
-/*
+
 	public void updateUser(User User) {
 		//get connection
 		Connection cnt = connection.getConnection();
@@ -158,22 +203,24 @@ public class UsersService {
 		//create query
 		String query = "UPDATE " + User.TABLE +
 				" SET "
-				+ User.COL_NAME + " = ?,"
-				+ User.COL_MOBILE + " = ?,"
 				+ User.COL_EMAIL + " = ?,"
-				+ User.COL_GROUP + " = ?" +
+				+ User.COL_PASSWORD + " = ?,"
+				+ User.COL_PHONENO + " = ?,"
+				+ User.COL_LASTNAME + " = ?,"
+				+ User.COL_FIRSTNAME + " = ?" + 
 				" WHERE " + User.COL_USERNAME + " = ?";
 		
 		try {
 			//create prepared statement
 			PreparedStatement ps = cnt.prepareStatement(query);
-			
+                        
 			//prepare the values
-			ps.setInt(5, User.getId());
-			ps.setString(1, User.getName());
-			ps.setString(2, User.getMobile());
-			ps.setString(3, User.getEmail());
-			ps.setString(4, User.getGroup());
+			ps.setString(1, User.getEmail());
+			ps.setString(2, User.getPassword());
+			ps.setString(3, User.getPhoneNo());
+			ps.setString(4, User.getLastName());
+			ps.setString(5, User.getFirstName());
+			ps.setString(6, User.getUsername());
 			
 			//execute the update
 			ps.executeUpdate();
@@ -189,7 +236,7 @@ public class UsersService {
 			e.printStackTrace();
 		}
 	}
-*/
+
 	public List<User> getAllByGroup(String group) {
 		
 		return null;
