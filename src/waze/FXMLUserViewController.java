@@ -42,7 +42,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class FXMLUserViewController implements Initializable {
     
     private User currentUser;
-    @FXML Label test;
+    @FXML Label welcome;
     @FXML Button logoutButton;
     
     @FXML TextField EmailUpdate;
@@ -50,6 +50,12 @@ public class FXMLUserViewController implements Initializable {
     @FXML TextField PhoneNoUpdate;
     @FXML TextField LastNameUpdate;
     @FXML TextField FirstNameUpdate;
+   
+    @FXML Label userIDLabel;
+    @FXML Label lastNameLabel;
+    @FXML Label firstNameLabel;
+    @FXML Label emailAddressLabel;
+    @FXML Label phoneNoLabel;
     
     @FXML TableView<User> friendsTable;
     @FXML TableColumn<User, Image> avatarColumn;
@@ -58,6 +64,7 @@ public class FXMLUserViewController implements Initializable {
     @FXML TableColumn<User, java.sql.Date> dateColumn;
     
     @FXML ImageView usericon;
+    @FXML ImageView updateDetailsAvatar;
     
     public void changeScreenButtonPushed(ActionEvent e) throws IOException{
     Parent adminViewParent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
@@ -112,8 +119,16 @@ public class FXMLUserViewController implements Initializable {
      */
     public void initUser(User user){
         this.currentUser = user;
-        test.setText("Hello, " + currentUser.getFirstName() + "!");
+        welcome.setText("Hello, " + currentUser.getFirstName() + "!");
+        
+        userIDLabel.setText(currentUser.getUsername());
+        lastNameLabel.setText(currentUser.getLastName());
+        firstNameLabel.setText(currentUser.getFirstName());
+        emailAddressLabel.setText(currentUser.getEmail());
+        phoneNoLabel.setText(currentUser.getPhoneNo());
+        
         usericon.setImage(new Image("waze/avatars/" + currentUser.getAvatar()));
+        updateDetailsAvatar.setImage(new Image("waze/avatars/" + currentUser.getAvatar()));
     }
     
     
