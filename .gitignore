@@ -7,3 +7,4 @@ dist/Waze.html
 *.properties
 *.xml
 *.xml
+src/waze/UsersDB.java
