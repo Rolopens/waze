@@ -55,7 +55,7 @@ public class RoadDensityService {
 	}
 	
 	//return list
-	return SavedLocations;
+	return RoadDensities;
     }
     
     public static void main(String[] args) {
@@ -70,8 +70,6 @@ public class RoadDensityService {
     private RoadDensity toRoadDensity(ResultSet rs) throws SQLException {
         RoadDensity RoadDensity = new RoadDensity();
 		
-        RoadDensity.setUsername(rs.getString(RoadDensity.COL_USERNAME));
-	RoadDensity.setLocationID(rs.getInt(RoadDensity.COL_LOCATIONID)); //not sure about getInt
 	RoadDensity.setStName(rs.getString(RoadDensity.COL_STNAME));
 	RoadDensity.setTrafficReports(rs.getInt(RoadDensity.COL_TRAFFICREPORTS));
         
