@@ -18,7 +18,7 @@ import java.util.List;
 public class RoadDensityService {
     private UsersDB connection;
     
-    public SavedLocationsService(UsersDB UsersDB) {
+    public RoadDensityService(UsersDB UsersDB) {
 		this.connection = UsersDB;
     }
     
