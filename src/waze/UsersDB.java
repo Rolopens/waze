@@ -8,7 +8,7 @@ public class UsersDB {
 	private final static String DRIVER_NAME = "com.mysql.jdbc.Driver";
 	private final static String URL = "jdbc:mysql://127.0.0.1:3306/";
 	private final static String USERNAME = "root";
-	private final static String PASSWORD = "database";
+	private final static String PASSWORD = "bulosA1";
 	private final static String DATABASE = "Waze";
 	
 	public Connection getConnection() {
