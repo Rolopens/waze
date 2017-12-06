@@ -5,13 +5,20 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="waze.FXMLAdminViewController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="waze.FXMLAdminViewController">
    <children>
-      <Button fx:id="logoutButton" layoutX="672.0" layoutY="525.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" text="Logout" />
-      <TableView fx:id="userTable" layoutX="100.0" layoutY="59.0" prefHeight="275.0" prefWidth="599.0">
+      <ImageView fitHeight="600.0" fitWidth="900.0">
+         <image>
+            <Image url="@wazecolorback.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="logoutButton" layoutX="831.0" layoutY="15.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" text="Logout" />
+      <TableView fx:id="userTable" layoutX="258.0" layoutY="89.0" prefHeight="275.0" prefWidth="599.0">
         <columns>
           <TableColumn fx:id="usernameColumn" prefWidth="100.0" text="Username" />
           <TableColumn fx:id="passwordColumn" prefWidth="100.0" text="Password" />
@@ -21,12 +28,12 @@
             <TableColumn fx:id="dateColumn" prefWidth="100.0" text="Last Login" />
         </columns>
       </TableView>
-      <Label layoutX="341.0" layoutY="14.0" text="Hello, Admin!">
+      <Label layoutX="67.0" layoutY="27.0" text="Hello, Admin!">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="32.0" layoutY="353.0" prefHeight="172.0" prefWidth="386.0">
+      <AnchorPane layoutX="471.0" layoutY="398.0" prefHeight="172.0" prefWidth="386.0">
          <children>
             <Button fx:id="addButton" layoutX="146.0" layoutY="127.0" mnemonicParsing="false" onAction="#addUserButtonPushed" prefHeight="26.0" prefWidth="91.0" text="Add" />
             <TextField fx:id="Username" layoutX="14.0" layoutY="14.0" promptText="Username" />
@@ -37,7 +44,7 @@
             <TextField fx:id="FirstName" layoutX="219.0" layoutY="85.0" promptText="First Name" />
          </children>
       </AnchorPane>
-      <Button fx:id="deleteButton" layoutX="535.0" layoutY="382.0" mnemonicParsing="false" onAction="#deleteUserButtonPushed" prefHeight="46.0" prefWidth="127.0" text="DELETE BUTTON">
+      <Button fx:id="deleteButton" layoutX="277.0" layoutY="398.0" mnemonicParsing="false" onAction="#deleteUserButtonPushed" prefHeight="46.0" prefWidth="127.0" text="DELETE">
          <font>
             <Font size="14.0" />
          </font>

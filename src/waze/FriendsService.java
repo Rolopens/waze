@@ -71,7 +71,7 @@ public class FriendsService {
 	return Friend;
     }
     
-    public void addUser(Friend Friend) {
+    public void addFriend(Friend Friend) {
 	//get connection
         Connection cnt = connection.getConnection();
 				
@@ -99,6 +99,37 @@ public class FriendsService {
             System.out.println("[FriendS] INSERTION FAILED! :(");
             e.printStackTrace();
 	}
+		
+    }
+    
+    public void deleteFriend(String FriendsUsername) { //not sure if we use just locationID or if we should also use username
+	//get connection
+	Connection cnt = connection.getConnection();
+	
+	//create query
+	String query = "DELETE FROM " + Friend.TABLE +" WHERE FriendsUsername = ?"; //is this how you do it? haha
+	
+	try {
+            //create prepared statement
+            PreparedStatement ps = cnt.prepareStatement(query);
+
+            //prepare the values
+            ps.setString(1, FriendsUsername);
+            
+            //execute the update
+            ps.executeUpdate();
+
+            //close resources
+            ps.close();
+            cnt.close();
+
+            System.out.println("[FriendS] DELETE SUCCESS!");
+	} catch (SQLException e) {
+            // TODO Auto-generated catch block
+            System.out.println("[FriendS] DELETE FAILED!");
+            e.printStackTrace();
+	}
+		
 		
     }
 }
